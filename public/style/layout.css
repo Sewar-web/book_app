@@ -1,0 +1,54 @@
+input[type=text], select {
+    width: 50%;
+    height: 50px;
+    padding: 6px ;
+    margin: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    background-color: grey;
+    margin-left: 250px;
+    font-size: x-large;
+    font-family: 'Dancing Script', cursive;
+ 
+  }
+  
+  input[type=radio] {
+    
+
+    width: 500px;
+	margin-left: 177px;
+	text-align: center;
+    margin-top:50px;
+    font-size: x-large;
+    font-family: 'Dancing Script', cursive;
+  
+  }
+  button
+  {
+    font-family: 'Dancing Script', cursive;
+      align-items: center;
+      width: 50%;
+      margin-left: 250px;
+      height: 50px;
+      margin-top: 200px;
+      background-color: grey;
+      font-size: x-large;
+  }
+  label
+  {
+    float: righ;
+    width: 500px;
+   font-size: x-large;
+	text-align: center;
+    /* text-align: center;
+    box-sizing: border-box; */
+    font-family: 'Dancing Script', cursive;
+  }
+  body
+  {
+      background-color: rgb(203, 206, 199);
+      font-family: 'Dancing Script', cursive;
+  }
+  

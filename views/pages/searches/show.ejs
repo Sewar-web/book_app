@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+        </style>
+    <link rel="stylesheet" href="/style/base.css">
+    <title>SHOW</title>
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/searches/new">search book</a>
+        </nav>
+    </header>
+    <main>
+        <div class="style">
+    <% bookarray.forEach(element => { %>
+         <img src="<%=element.img %>" alt="">
+         <h1> <%=element.title %></h1>
+         <h2> <%=element.author %></h2>
+         <p> <%= element.description%></p>
+
+
+  <%   }); %> 
+ </div>
+
+</main>
+ 
+</body>
+</html>

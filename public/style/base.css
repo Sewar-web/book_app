@@ -1,0 +1,30 @@
+
+body
+{
+    width: 960px;
+    /* margin: auto; */
+    background-color: rgb(158, 155, 155);
+    font-family: 'Dancing Script', cursive;
+    color: rgb(7, 6, 7);
+}
+
+ .style{
+    width: 500px; 
+    height: 300px;
+    align-items: center;
+    text-align: center;
+   
+    margin-left: 350px;
+    /* width: auto;
+    height: auto;
+    /* margin-top: 20px;
+    background-color: rgb(7, 6, 6); */ 
+
+ 
+}
+
+
+
+nav{
+    font-size: x-large;
+}
