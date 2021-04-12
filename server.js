@@ -18,6 +18,8 @@ server.get('/',(req,res)=>{
   res.render('./pages/index');
 });
 
+
+
 server.get('/searches/new' ,(req,res) =>{
   res.render('./pages/searches/new');
 });
@@ -40,6 +42,8 @@ function handledData(req ,res)
 
 
 }
+
+
 function Books(getData)
 {
   this.name=getData.volumeInfo.title;
@@ -47,10 +51,11 @@ function Books(getData)
   this.description=getData.volumeInfo.description;
   this.img=getData.volumeInfo.imageLinks.thumbnail;
 }
-server.get('*' ,(req,res) =>
-{
-  res.render('pages/error');
+
+server.get('*',(req,res)=>{
+  res.render('/pages/error');
 });
+
 server.listen(PORT,()=>{
   console.log(`Listening on PORT ${PORT}`);
 });
