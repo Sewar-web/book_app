@@ -1,0 +1,30 @@
+body
+{
+    width: 960px;
+    background-color: rgb(158, 155, 155);
+}
+
+main div{
+    width: 500px;
+    height: 300px;
+    align-items: center;
+    text-align: center;
+    margin-left: 350px;
+}
+div h1
+{
+   font-family: 'Dancing Script', cursive;
+    color: rgb(7, 6, 7);
+}
+
+div h2
+{
+   font-family: 'Dancing Script', cursive;
+    color: rgb(12, 12, 12);
+}
+
+div p
+{
+   font-family: 'Dancing Script', cursive;
+    color: rgb(10, 10, 10);
+}
