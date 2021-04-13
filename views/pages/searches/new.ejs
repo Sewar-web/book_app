@@ -13,16 +13,51 @@
 </head>
 
 <body>
-    <form action="/searches/show" method="GET">
+    <header>
+        <h1 class="h1">
+            <div class="mobile-container">
+
+                <!-- Top Navigation Menu -->
+                <div class="topnav">
+                  <a href="#home" class="active">BOOK</a>
+                  <div id="myLinks">
+                    <a href="/views/pages/index.ejs">HOME</a>
+                    <a href="/views/pages/searches/new.ejs">search</a>
+                    <a href="#about">About</a>
+                  </div>
+                  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </div>
+        </h1>
+       
+    </header>
+    <form action="/searches" method="POST">
         <input type="text" id="AuthororTitle" name="AuthororTitle" placeholder="enter you title or author"> <br>
-        <input type="radio" id="title" name="title" value=" title ">
-        <label for="title">Title</label> <br>
-        <input type="radio" id="author" name="title" value="author">
-        <label for="author">Author</label><br>
+       
+        <label for="title">Title
+            <input type="radio" id="title" name="title" value=" title ">
+        </label> <br>
+        <br><br>
+        <br>
+
+        <label for="author">Author
+            <input type="radio" id="author" name="title" value="author">
+        </label><br>
         <button>search for book api</button>
     </form>
 
 
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
 </body>
 
 </html>

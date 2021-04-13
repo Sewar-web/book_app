@@ -13,18 +13,33 @@ body
     height: 300px;
     align-items: center;
     text-align: center;
-   
     margin-left: 350px;
-    /* width: auto;
-    height: auto;
-    /* margin-top: 20px;
-    background-color: rgb(7, 6, 6); */ 
+  
 
  
 }
+.h1
+{
+    text-align: center;
+  background-color: black;
+  color: white;
+  height: 40px;
+  width: 500px;
+  margin-left: 350px;
 
+}
 
+div{
+    width: auto;
+    height: auto;
+     margin-top: 20px; 
+    background-color: rgb(151, 119, 119); 
+}
 
 nav{
+
+    display: block;
+    display: inline;
     font-size: x-large;
+
 }

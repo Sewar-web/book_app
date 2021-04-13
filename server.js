@@ -23,14 +23,14 @@ server.get('/',(req,res)=>{
 server.get('/searches/new' ,(req,res) =>{
   res.render('./pages/searches/new');
 });
-server.get('/searches/show' ,handledData);
+server.post('/searches' ,handledData);
 function handledData(req ,res)
 {
-  let select=req.query.select;
-  let search=req.query.AuthororTitle;
+  // let select=req.body.select;
+  let search=req.body.AuthororTitle;
 
 
-  const bookURL=`https://www.googleapis.com/books/v1/volumes?q=${search}:${select}`;
+  const bookURL=`https://www.googleapis.com/books/v1/volumes?q=${search}`;
   superagent.get(bookURL)
     .then(getData => {
       console.log(bookURL);
@@ -46,14 +46,15 @@ function handledData(req ,res)
 
 function Books(getData)
 {
-  this.name=getData.volumeInfo.title;
-  this.author=getData.volumeInfo.authors;
-  this.description=getData.volumeInfo.description;
+  this.name=(getData.volumeInfo.title) ? getData.volumeInfo.title : 'there  is no data';
+  this.author=(getData.volumeInfo.authors) ? getData.volumeInfo.authors : 'there is no data';
+  this.description=(getData.volumeInfo.description) ? getData.volumeInfo.description : 'there is no data' ;
+  // (getData.volumeInfo.imageLinks) ? getData.volumeInfo.imageLinks.smallThumbnail :`https://i.imgur.com/J5LVHEL.jpg` ;
   this.img=getData.volumeInfo.imageLinks.thumbnail;
 }
 
 server.get('*',(req,res)=>{
-  res.render('/pages/error');
+  res.status(404).send('There Somthing Error');
 });
 
 server.listen(PORT,()=>{
