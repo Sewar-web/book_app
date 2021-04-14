@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,19 +10,58 @@
 </head>
 
 <body>
-    <header><h2>Best Books!</h2>
-        
+    <header>
+        <h2>Best Books!</h2>
+
         <ul>
             <li> <a href="/">Home</a> </li>
             <li><a href="/searches/new">search for book api</a></li>
         </ul>
     </header>
-    <main><div>
-        <img src="<%= bookarray.image_url %> " alt="sewar image ">
-        <h3> <%= bookarray.title %> </h3>
-        <h4> <%= bookarray.author %> </h4>
-        <h5>  <%= bookarray.isbn %> </h5>
-        <p> <%= bookarray.description  %>  </p>
-    </div></main>
+    <main>
+        <div>
+           
+            <h3>
+                <%= bookarray.title %>
+            </h3>
+            <h4>
+                <%= bookarray.author %>
+            </h4>
+            <h5>
+                <%= bookarray.isbn %>
+            </h5>
+            <p>
+                <%= bookarray.description %>
+            </p>
+            <img src="<%=bookarray.image_url %> " alt="">
+        </div>
+    </main>
+    <h3>Update Task From</h3>
+    <button id='updateBtn'>Update</button>
+    <section>
+       
+        <section id='updateForm'>
+          <form action="/updateTask/<%=bookarray.id%>?_method=put" method="post">
+           <input type="text" name="title" value=' <%= bookarray.title  %> '>
+           <br>
+           <input type="text" name="author" value=' <%= bookarray.author  %> '>
+           <br>
+           <input type="text" name="image_url" value=' <%= bookarray.image_url  %> '>
+           <br>
+           <textarea name="description" cols="30" rows="10"><%= bookarray.description  %></textarea>
+           <br>
+           <button type="submit">Update Task</button>
+       </form>
+        </section>
+
+        <form action="/deleteTask/<%=bookarray.id%>?_method=delete" method="post">
+            <button>Delete Task</button>
+         </form>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/app.js"></script>
 </body>
+
 </html>
