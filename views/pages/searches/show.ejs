@@ -21,18 +21,26 @@
         </nav>
     </header>
     <main>
-        <div class="style">
-    <% bookarray.forEach(element => { %>
-         <div><img src="<%=element.img %>" alt="">
-            <br>
-         <h1> <%=element.title %></h1>
-         <br>
-         <h2> <%=element.author %></h2>
-         <p> <%= element.description%></p></div>
-
-
-  <%   }); %> 
- </div>
+        <main>
+            <% bookarray.forEach(element =>{%> 
+            <div>
+                <form action="/book" method="POST">
+                   
+            <img src="<%= element.image_url %> " alt="">
+            <input type="hidden" name="image_url" value="<%= element.image_url %>">
+            <h3><%= element.title %> </h3>
+            <input type="hidden" name="title" value="<%= element.title %>">
+            <h4><%= element.author %> </h4>
+            <input type="hidden" name="author" value="<%= element.author %>">
+            <input type="hidden" name="isbn" value="<%= element.isbn %>">
+            <input type="hidden" name="description" value="<%= element.description  %>">
+            <h5><%= element.isbn %> </h5>
+           <p><%= element.description  %> </p>
+            <button>select this book</button>
+            </form>
+             </div>
+            <% }) %> 
+        </main>
 
 </main>
 

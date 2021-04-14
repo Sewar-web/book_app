@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/base.css">
+</head>
+
+<body>
+    <header><h2>Best Books!</h2>
+        
+        <ul>
+            <li> <a href="/">Home</a> </li>
+            <li><a href="/searches/new">search for book api</a></li>
+        </ul>
+    </header>
+    <main><div>
+        <img src="<%= bookarray.image_url %> " alt="sewar image ">
+        <h3> <%= bookarray.title %> </h3>
+        <h4> <%= bookarray.author %> </h4>
+        <h5>  <%= bookarray.isbn %> </h5>
+        <p> <%= bookarray.description  %>  </p>
+    </div></main>
+</body>
+</html>
