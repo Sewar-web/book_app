@@ -2,12 +2,16 @@
 
 require('dotenv').config();
 const pg = require('pg');
+const methodOverride = require('method-override');
 const express = require('express');
 
 const superagent = require('superagent');
 const server = express();
 
+
 server.use(express.static('./public'));
+server.use(methodOverride('_method'));
+
 server.set('view engine','ejs');
 
 server.use(express.urlencoded({extended:true}));
@@ -18,6 +22,29 @@ const client = new pg.Client( { connectionString: process.env.DATABASE_URL,
 } );
 const PORT = process.env.PORT || 3030;
 
+////////////////////////////////////////DELETE UPDATE/////////////////////////////////////////////
+
+server.put('/updateTask/:taskID',updateTaskHandler);
+server.delete('/deleteTask/:taskID',deleteTaskHandler);
+
+function updateTaskHandler(req,res) {
+  let {title,author,isbn,description,image_url} = req.body;
+  let SQL = `UPDATE book SET title=$1,author=$2,isbn=$3,description=$4,image_url=$5 WHERE id=$6;`;
+  let safeValues = [title,author,isbn,description,image_url ,req.params.taskID];
+  client.query(SQL,safeValues)
+    .then(()=>{
+      res.redirect(`/book/${req.params.taskID}`);
+    });
+}
+
+function deleteTaskHandler(req,res) {
+  let SQL = `DELETE FROM book WHERE id=$1;`;
+  let value = [req.params.taskID];
+  client.query(SQL,value)
+    .then(res.redirect('/'));
+}
+
+/////////////////////////////////////HOME///////////////////////////////////////
 server.get('/',(req,res)=>{
 
   let SQL=`SELECT * FROM book;`;
