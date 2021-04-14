@@ -5,10 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOOK</title>
+    <link rel="stylesheet" href="/style/base.css">
 </head>
 <body>
 
+
     <h2>Welcome to Book-app</h2>
+    <nav>
+        <a href="/">Home</a>
+        <br>
+
+        <a href="/searches/new">search book</a>
+    </nav>
+    <main>
+        <h3 style="font-family: 'Dancing Script', cursive;">You Have <%= (bookarray.length)  %>  Books  </h3>
+
+        <% bookarray.forEach(element =>{%> 
+            <form action="/book/<%= element.id %>">
+        <div>
+        <img src="<%=element.image_url%> " alt="">
+        <h3><%= element.title %> </h3>
+        <h4><%= element.author %> </h4>
+        <%= element.isbn %> </h5> 
+       <%= element.description  %>  </p> 
+        <button>View Details</button>
+         </div>
+        </form>
+        <% }) %> 
+    </main>
 
 </body>
 <script></script>
